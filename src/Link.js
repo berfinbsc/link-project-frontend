@@ -12,9 +12,9 @@ const handlePostRequest=()=>{
     darvinlink:shortlink 
   }
 
-  axios.post('https://zetacoder.rocks/darvinapi/darvinberfin/create', data) // !!! benim yayinladigima baglan
+  axios.post('https://zetacoder.rocks/darvinapi/darvinberfin/create', data) 
   .then(response=>{
-    console.log(response.data); // burda logluyo iste !! vermesi lazim
+    console.log(response.data);
   })
   .catch(error =>{
     console.log('post hatası',error);
