@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, {useState} from 'react'
 import axios from 'axios';
 const Link = () => {
 
@@ -8,13 +8,13 @@ const [shortlink,setShortLink]=useState('');
 
 const handlePostRequest=()=>{
   const data={
-    long:longlink, 
-    short:shortlink
-  };
+    longlink:longlink, 
+    darvinlink:shortlink 
+  }
 
-  axios.post('http://localhost:3007/darvinberfin/create', data)
+  axios.post('https://zetacoder.rocks/darvinapi/darvinberfin/create', data) // !!! benim yayinladigima baglan
   .then(response=>{
-    console.log(response.data);
+    console.log(response.data); // burda logluyo iste !! vermesi lazim
   })
   .catch(error =>{
     console.log('post hatası',error);
