@@ -5,7 +5,7 @@ const Link = () => {
 
 const [longlink,setLongLink]=useState('');
 const [shortlink,setShortLink]=useState('');
-
+const [message , setMessage] = useState(''); // default false 
 const handlePostRequest=()=>{
   const data={
     longlink:longlink, 
@@ -14,8 +14,11 @@ const handlePostRequest=()=>{
 
   axios.post('https://zetacoder.rocks/darvinapi/darvinberfin/create', data) 
   .then(response=>{
-    console.log(response.data);
+    console.log(response.data);  
+    setMessage(response.data.message) 
+
   })
+     
   .catch(error =>{
     console.log('post hatası',error);
   })
@@ -49,6 +52,8 @@ const handlePostRequest=()=>{
 <button class="ui button" onClick={handlePostRequest}>
   Kısalt
 </button>
+
+ <p>{message}</p> 
 
 
 </div>
